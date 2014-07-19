@@ -1,0 +1,55 @@
+
+library & Tools
+===============
+
+thank you all.
+
+
+bootstrap
+---------
+
+html template
+
+* version 3.2.0
+* http://getbootstrap.com/
+* http://getbootstrap.com/examples/jumbotron/
+
+* The MIT License (MIT)
+* Copyright (c) 2011-2014 Twitter, Inc
+* https://github.com/twbs/bootstrap/blob/master/LICENSE
+
+
+node.js
+----------
+
+This is Serverside javascript.
+I use it for Jison.
+
+* v0.10.29
+* http://nodejs.org/
+
+
+Jison
+----------
+
+parsar generator
+
+* http://zaach.github.io/jison/
+
+* Copyright (c) 2009-2013 Zachary Carter
+* http://zaach.github.io/jison/docs/#license
+* The MIT License (MIT)
+
+>npm install jison -g
+>
+>jison@0.4.13
+>„¥„Ÿ„Ÿ jison-lex@0.2.1
+>„¥„Ÿ„Ÿ cjson@0.2.1
+>„¥„Ÿ„Ÿ lex-parser@0.1.4
+>„¥„Ÿ„Ÿ ebnf-parser@0.1.10
+>„¥„Ÿ„Ÿ nomnom@1.5.2 (colors@0.5.1, underscore@1.1.7)
+>„¥„Ÿ„Ÿ esprima@1.0.4
+>„¥„Ÿ„Ÿ escodegen@0.0.21 (estraverse@0.0.4, source-map@0.1.37)
+>„¤„Ÿ„Ÿ JSONSelect@0.4.0
+
+

@@ -1,4 +1,5 @@
 block-basic
 ===========
 
-This is tiny basic interpreter with block-like editor.
+Block-Basic is tiny basic interpreter with block-like editor.
+It is implementation for concept.
