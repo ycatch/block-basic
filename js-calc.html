@@ -32,12 +32,12 @@
 	<script type="text/javascript"><!--
 		function run_expr() {
 			var exprTextArea = document.getElementById("expression");
-			var resultTextArea = document.getElementById("result");
-            resultTextArea.textContent = "Result : " + calculator.parse(exprTextArea.value);
+            set_result(calculator.parse(exprTextArea.value));
 		}
 		
 		function set_result(output) {
-		        resultTextArea.textContent = "Result : " + output;
+			var resultTextArea = document.getElementById("result");
+		    resultTextArea.textContent = "Result : " + output;
 		}
 	// --></script>	
   </head>
