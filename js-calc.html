@@ -33,7 +33,7 @@
 		function run_expr() {
 			var exprTextArea = document.getElementById("expression");
 			var resultTextArea = document.getElementById("result");
-            resultTextArea.textContent = "Result: " + calculator.parse(exprTextArea.value);
+            resultTextArea.textContent = "Result : " + calculator.parse(exprTextArea.value);
 		}
 	// --></script>	
   </head>
@@ -68,12 +68,18 @@
 		</div>
 		<div class="row text-center">
 			<form>
-			<p>Enter expression to calculate: + - * / ^ !</p>
+			<p>Enter expression to calculate: + - * / ^ ! % E PI</p>
 			<input type="text" id="expression">
-			<div id="result"></div><br />
 			<input type="button" id="calc_it" class="btn btn-primary btn-xs" value="Calc It!" onClick="run_expr()">
+			<hr>
+			<div id="result"></div>
 			</form>
+			<hr>
 		</div>
+		<footer>
+			<p>&copy; Yutaka Catch 2014</p>
+		</footer>
+    </div> 		
 	</div><!-- /.container -->
 
 
