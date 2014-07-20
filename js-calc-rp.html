@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="lib/bootstrap/favicon.ico">
 
-    <title>Javascript Calculator</title>
+    <title>Javascript Calculator - reverse polish notation</title>
 
     <!-- Bootstrap core CSS -->
     <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -28,11 +28,11 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-	<script src="js/calc.js" type="text/javascript"></script> 
+	<script src="js/calc_rp.js" type="text/javascript"></script> 
 	<script type="text/javascript"><!--
 		function run_expr() {
 			var exprTextArea = document.getElementById("expression");
-            set_result(calc.parse(exprTextArea.value));
+            set_result(calc_rp.parse(exprTextArea.value));
 		}
 		
 		function set_result(output) {
@@ -67,8 +67,9 @@
     <div class="container">
 
 		<div class="starter-template">
-			<h1>Javascript Calculator</h1>
-			<p class="lead">This is tiny calculator on the web.</p>
+			<h1>Javascript Calculator - reverse polish notation</h1>
+			<p class="lead">This is tiny calculator by reverse polish notationon. <br />
+			ex. 1 2 + 3 4 + * = 21</p>
 		</div>
 		<div class="row text-center">
 			<form>
