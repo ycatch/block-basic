@@ -23,6 +23,13 @@
 
 /lex
 
+/* javascript code*/
+
+%{
+/* addon code */
+
+%}
+
 /* operator associations and precedence */
 
 %left '+' '-'
@@ -38,35 +45,40 @@
 
 expressions
     : e EOF
-        { typeof console !== 'undefined' ? console.log($1) : print($1);
-          return $1; }
+        {  var parse_out = yy.lists + " = " + $1;
+	   typeof console !== 'undefined' ? console.log(parse_out) : print(parse_out);
+          return parse_out; }
     ;
 
 e
     : e e '+'
-        {$$ = $1+$2;}
+        {$$ = $1+$2;
+	 yy.lists += " +: " + yytext + ", ";}
     | e e '-'
-        {$$ = $1-$2;}
+        {$$ = $1-$2;
+	 yy.lists += " -: " + yytext + ", ";}
     | e e '*'
-        {$$ = $1*$2;}
+        {$$ = $1*$2;
+	 yy.lists += " *: " + yytext + ", ";}
     | e e '/'
-        {$$ = $1/$2;}
+        {$$ = $1/$2;
+	 yy.lists += " /: " + yytext + ", ";}
     | e e '^'
-        {$$ = Math.pow($1, $2);}
+        {$$ = Math.pow($1, $2);
+	 yy.lists += " ^: " + yytext + ", ";}
     | e '!'
-        {{
-          $$ = (function fact (n) { return n==0 ? 1 : fact(n-1) * n })($1);
-        }}
+        {{$$ = (function fact (n) { return n==0 ? 1 : fact(n-1) * n })($1);
+	 yy.lists += " !: " + yytext + ", ";}}
     | e '%'
-        {$$ = $1/100;}
-    | '-' e %prec UMINUS
-        {$$ = -$2;}
-    | '(' e ')'
-        {$$ = $2;}
+        {$$ = $1/100;
+	 yy.lists += " %: " + yytext + ", ";}
     | NUMBER
-        {$$ = Number(yytext);}
+        {$$ = Number(yytext);
+	 yy.lists += " Num: " + yytext + ", ";}
     | E
-        {$$ = Math.E;}
+        {$$ = Math.E;
+	 yy.lists += " E: " + yytext + ", ";}
     | PI
-        {$$ = Math.PI;}
+        {$$ = Math.PI;
+	 yy.lists += " PI: " + yytext + ", ";}
     ;

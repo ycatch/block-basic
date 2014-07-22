@@ -31,8 +31,9 @@
 	<script src="js/calc_rp.js" type="text/javascript"></script> 
 	<script type="text/javascript"><!--
 		function run_expr() {
+			calc_rp.yy.lists = "";
 			var exprTextArea = document.getElementById("expression");
-            set_result(calc_rp.parse(exprTextArea.value));
+			return calc_rp.parse(exprTextArea.value);
 		}
 		
 		function set_result(output) {
@@ -75,14 +76,14 @@
 			<form>
 			<p>Enter expression to calculate: + - * / ^ ! % E PI</p>
 			<input type="text" id="expression">
-			<input type="button" id="calc_it" class="btn btn-primary btn-xs" value="Calc It!" onClick="run_expr()">
+			<input type="button" id="calc_it" class="btn btn-primary btn-xs" value="Calc It!" onClick="var ans=run_expr(); set_result(ans)">
 			<hr>
 			<div id="result"></div>
 			</form>
 			<hr>
 		</div>
 		<footer>
-			<p>&copy; Yutaka Catch 2014</p>
+			<p>&copy; Yutaka kachi 2014</p>
 		</footer>
     </div> 		
 	</div><!-- /.container -->
