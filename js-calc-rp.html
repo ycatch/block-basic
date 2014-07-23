@@ -32,12 +32,12 @@
 	<script type="text/javascript"><!--
 		function run_expr() {
 			calc_rp.yy.lists = "";
-			var exprTextArea = document.getElementById("expression");
+			var exprTextArea = document.getElementById("BBB_coding");
 			return calc_rp.parse(exprTextArea.value);
 		}
 		
 		function set_result(output) {
-			var resultTextArea = document.getElementById("result");
+			var resultTextArea = document.getElementById("BBB_result");
 		    resultTextArea.textContent = "Result : " + output;
 		}
 	// --></script>	
@@ -75,10 +75,10 @@
 		<div class="row text-center">
 			<form>
 			<p>Enter expression to calculate: + - * / ^ ! % E PI</p>
-			<input type="text" id="expression">
+			<textarea type="text" id="BBB_coding" cols="40" rows="2"></textarea><br />
 			<input type="button" id="calc_it" class="btn btn-primary btn-xs" value="Calc It!" onClick="var ans=run_expr(); set_result(ans)">
 			<hr>
-			<div id="result"></div>
+			<div id="BBB_result"></div>
 			</form>
 			<hr>
 		</div>
