@@ -88,7 +88,7 @@ case 2: yy.parser.addResult($$[$0-2]);
 break;
 case 3: yy.parser.addResult($$[$0]); 
 break;
-case 4: yy.parser.addResult($$[$0]); 
+case 4: yy.parser.addResult("alert(" + $$[$0] + ");"); 
 break;
 case 5:this.$ = $$[$0];
 break;
