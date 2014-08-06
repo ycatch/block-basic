@@ -92,31 +92,31 @@ case 4: yy.parser.addResult("alert(" + $$[$0] + ");");
 break;
 case 5:this.$ = $$[$0];
 break;
-case 6:            yy.parser.setVar($$[$0-2], $$[$0]);            this.$ = $$[$0];        
+case 6:            yy.parser.setVar($$[$0-2], $$[$0]);            this.$ = $$[$0-2] + "=" + $$[$0];        
 break;
-case 7:this.$ = $$[$0-2] + $$[$0];
+case 7:this.$ = $$[$0-2] + "+" + $$[$0];
 break;
-case 8:this.$ = $$[$0-2] - $$[$0];
+case 8:this.$ = $$[$0-2] + "-" + $$[$0];
 break;
-case 9:this.$ = $$[$0-2] * $$[$0];
+case 9:this.$ = $$[$0-2] + "*" + $$[$0];
 break;
-case 10:this.$ = $$[$0-2] / $$[$0];
+case 10:this.$ = $$[$0-2] + "/" + $$[$0];
 break;
-case 11:this.$ = Math.pow($$[$0-2], $$[$0]);
+case 11:this.$ = "Math.pow(" + $$[$0-2] + "," + $$[$0] + ")";
 break;
 case 12:this.$ = Number(yytext);
 break;
 case 13:this.$ = String(yytext);
 break;
-case 14:this.$ =  yy.parser.getVar($$[$0]);
+case 14:this.$ =  $$[$0];
 break;
-case 15:this.$ =  $$[$0-1];
+case 15:this.$ =  "(" + $$[$0-1] + ")";
 break;
-case 16:this.$ = -$$[$0];
+case 16:this.$ = "-" + $$[$0];
 break;
-case 17:this.$ = Math.E;
+case 17:this.$ = "Math.E";
 break;
-case 18:this.$ = Math.PI;
+case 18:this.$ = "Math.PI";
 break;
 }
 },
