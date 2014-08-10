@@ -35,8 +35,9 @@
 			set_result(ans);
 		}
 		function eval_code() {
-			var exprTextArea = document.getElementById("bbb_code");
-			return bbb_script.parse(exprTextArea.value);
+			var codeTextArea = document.getElementById("bbb_code");
+			var str_code = codeTextArea.value.replace(/^[ \t]*\n/mg,"_BLANK-LINE ");
+			return bbb_script.parse(str_code);
 		}
 		
 		function set_result(output) {
@@ -77,7 +78,7 @@
 		<div class="row text-center">
 			<form>
 			<p>Enter code to run</p>
-			<textarea type="text" id="bbb_code" cols="40" rows="2"></textarea><br />
+			<textarea type="text" id="bbb_code" cols="40" rows="5"></textarea><br />
 			<input type="button" id="calc_it" class="btn btn-primary btn-xs" value="Run" onClick="run_code()">
 			<hr>
 			<div id="bbb_result"></div>
