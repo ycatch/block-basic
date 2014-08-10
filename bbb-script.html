@@ -42,7 +42,7 @@
 		
 		function set_result(output) {
 			var resultTextArea = document.getElementById("bbb_result");
-		    resultTextArea.innerHTML = "Result : " + output;
+		    resultTextArea.innerHTML = "<pre>" + output.join("\n") + "</pre>";
 		}
 	// --></script>	
   </head>
@@ -73,7 +73,7 @@
 
 		<div class="starter-template">
 			<h1>bitty brick basic</h1>
-			<p class="lead">This is small programing language like a Tiny-Basic.</p>
+			<p class="lead">This is very small language for programing.</p>
 		</div>
 		<div class="row text-center">
 			<form>
