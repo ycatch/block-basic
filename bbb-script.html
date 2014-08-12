@@ -32,18 +32,20 @@
 	<script type="text/javascript"><!--
 		function run_code() {
 			var ans = compile_code();
-			set_result(ans);
+			set_code(ans);
+			eval(ans);
 		}
 		function compile_code() {
 			var codeTextArea = document.getElementById("bbb_code");
 			var str_code = escapeHTML(codeTextArea.value);
 			str_code = str_code.replace(/^[ \t]*\n/mg,"_BLANK-LINE ");
-			return bbb_script.parse(str_code);
+			str_code = bbb_script.parse(str_code).join("\n")
+			return str_code;
 		}
 		
-		function set_result(output) {
+		function set_code(output) {
 			var resultTextArea = document.getElementById("bbb_result");
-		    resultTextArea.innerHTML = "<pre>" + output.join("\n") + "</pre>";
+		    resultTextArea.innerHTML = "<pre>" + output + "</pre>";
 		}
 		
 		var escapeHTML = function(val) {
@@ -83,12 +85,16 @@
 		<div class="row text-center">
 			<form>
 			<p>Enter code to run</p>
-			<textarea type="text" id="bbb_code" cols="40" rows="5"></textarea><br />
+			<textarea type="text" id="bbb_code" cols="40" rows="5">
+a=INPUT "Number?"
+b=a*10
+PRINT b</textarea>
+			<br />
 			<input type="button" id="calc_it" class="btn btn-primary btn-xs" value="Run" onClick="run_code()">
 			<hr>
 			<div id="bbb_result"></div>
-			</form>
 			<hr>
+			</form>
 		</div>
 		<footer>
 			<p>&copy; Yutaka kachi 2014</p>
