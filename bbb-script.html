@@ -31,12 +31,13 @@
 	<script src="js/bbb_script.js" type="text/javascript"></script> 
 	<script type="text/javascript"><!--
 		function run_code() {
-			var ans = eval_code();
+			var ans = compile_code();
 			set_result(ans);
 		}
-		function eval_code() {
+		function compile_code() {
 			var codeTextArea = document.getElementById("bbb_code");
-			var str_code = codeTextArea.value.replace(/^[ \t]*\n/mg,"_BLANK-LINE ");
+			var str_code = escapeHTML(codeTextArea.value);
+			str_code = str_code.replace(/^[ \t]*\n/mg,"_BLANK-LINE ");
 			return bbb_script.parse(str_code);
 		}
 		
@@ -44,6 +45,10 @@
 			var resultTextArea = document.getElementById("bbb_result");
 		    resultTextArea.innerHTML = "<pre>" + output.join("\n") + "</pre>";
 		}
+		
+		var escapeHTML = function(val) {
+			return $('<div />').text(val).html();
+		};
 	// --></script>	
   </head>
 
