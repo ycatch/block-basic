@@ -74,8 +74,8 @@
 var bbb_script = (function(){
 var parser = {trace: function trace() { },
 yy: {},
-symbols_: {"error":2,"program":3,"lists":4,"EOF":5,"stmt":6,"BLANK-LINE":7,"PRINT":8,"expr":9,"IDENT":10,"=":11,"INPUT":12,"primary":13,"+":14,"-":15,"*":16,"/":17,"^":18,"NUMBER":19,"STRING":20,"(":21,")":22,"E":23,"PI":24,"ERR":25,"$accept":0,"$end":1},
-terminals_: {2:"error",5:"EOF",7:"BLANK-LINE",8:"PRINT",10:"IDENT",11:"=",12:"INPUT",14:"+",15:"-",16:"*",17:"/",18:"^",19:"NUMBER",20:"STRING",21:"(",22:")",23:"E",24:"PI",25:"ERR"},
+symbols_: {"error":2,"program":3,"lists":4,"EOF":5,"stmt":6,"BLANK-LINE":7,"PRINT":8,"expr":9,"IDENT":10,"EQ":11,"INPUT":12,"primary":13,"PLUS":14,"MINUS":15,"MULT":16,"DIVIDE":17,"CARET":18,"NUMBER":19,"STRING":20,"RPAREN":21,"LPAREN":22,"E":23,"PI":24,"ERR":25,"$accept":0,"$end":1},
+terminals_: {2:"error",5:"EOF",7:"BLANK-LINE",8:"PRINT",10:"IDENT",11:"EQ",12:"INPUT",14:"PLUS",15:"MINUS",16:"MULT",17:"DIVIDE",18:"CARET",19:"NUMBER",20:"STRING",21:"RPAREN",22:"LPAREN",23:"E",24:"PI",25:"ERR"},
 productions_: [0,[3,2],[4,1],[4,2],[6,1],[6,2],[6,4],[6,3],[9,1],[9,3],[9,3],[9,3],[9,3],[9,3],[13,1],[13,1],[13,1],[13,3],[13,2],[13,1],[13,1],[13,1]],
 performAction: function anonymous(yytext, yyleng, yylineno, yy, yystate /* action[1] */, $$ /* vstack */, _$ /* lstack */) {
 /* this == yyval */
@@ -613,28 +613,30 @@ case 8:return 20
 break;
 case 9:return 11
 break;
-case 10:return 14
+case 10:return 'NE'
 break;
-case 11:return 15
+case 11:return 14
 break;
-case 12:return 16
+case 12:return 15
 break;
-case 13:return 17
+case 13:return 16
 break;
-case 14:return 18
+case 14:return 17
 break;
-case 15:return 21
+case 15:return 18
 break;
-case 16:return 22
+case 16:return 21
 break;
-case 17:return 5
+case 17:return 22
 break;
-case 18:return 25
+case 18:return 5
+break;
+case 19:return 25
 break;
 }
 },
-rules: [/^(?:\s+)/,/^(?:_BLANK-LINE\b)/,/^(?:INPUT\b)/,/^(?:PRINT\b)/,/^(?:PI\b)/,/^(?:E\b)/,/^(?:[a-zA-Z]+[a-zA-Z0-9_]*\b)/,/^(?:[0-9]+(\.[0-9]+)?\b)/,/^(?:".*")/,/^(?:=)/,/^(?:\+)/,/^(?:-)/,/^(?:\*)/,/^(?:\/)/,/^(?:\^)/,/^(?:\()/,/^(?:\))/,/^(?:$)/,/^(?:.*\b)/],
-conditions: {"INITIAL":{"rules":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18],"inclusive":true}}
+rules: [/^(?:\s+)/,/^(?:_BLANK-LINE\b)/,/^(?:INPUT\b)/,/^(?:PRINT\b)/,/^(?:PI\b)/,/^(?:E\b)/,/^(?:[a-zA-Z]+[a-zA-Z0-9_]*\b)/,/^(?:[0-9]+(\.[0-9]+)?\b)/,/^(?:".*")/,/^(?:=)/,/^(?:!=)/,/^(?:\+)/,/^(?:-)/,/^(?:\*)/,/^(?:\/)/,/^(?:\^)/,/^(?:\()/,/^(?:\))/,/^(?:$)/,/^(?:.*\b)/],
+conditions: {"INITIAL":{"rules":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19],"inclusive":true}}
 };
 return lexer;
 })();
