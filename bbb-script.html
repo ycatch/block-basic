@@ -30,27 +30,38 @@
     <![endif]-->
 	<script src="js/bbb_script.js" type="text/javascript"></script> 
 	<script type="text/javascript"><!--
-		function run_code() {
-			var ans = compile_code();
-			set_code(ans);
-			eval(ans);
+		var bbb_script_lib = {
+			runCode: function() {
+				var ans = this.compileCode();
+				this.setCode(ans);
+				eval(ans);
+			},
+			
+			compileCode: function() {
+				var codeTextArea = document.getElementById("bbb_code");
+				var str_code = this.escapeHTML(codeTextArea.value);
+				str_code = str_code.replace(/^[ \t]*\n/mg,"_BLANK-LINE ");
+				str_code = bbb_script.parse(str_code).join("\n")
+				return str_code;
+			},
+			
+			setCode: function(output) {
+				var resultTextArea = document.getElementById("bbb_result");
+				resultTextArea.innerHTML = "<pre>" + output + "</pre>";
+			},
+			
+			escapeHTML: function(val) {
+				return $('<div />').text(val).html();
+			},
+			
+			checkNumber: function(val) {
+				if (isNaN(val)) {
+					return val + '';;
+				} else {
+					return Number(val);
+				}
+			}
 		}
-		function compile_code() {
-			var codeTextArea = document.getElementById("bbb_code");
-			var str_code = escapeHTML(codeTextArea.value);
-			str_code = str_code.replace(/^[ \t]*\n/mg,"_BLANK-LINE ");
-			str_code = bbb_script.parse(str_code).join("\n")
-			return str_code;
-		}
-		
-		function set_code(output) {
-			var resultTextArea = document.getElementById("bbb_result");
-		    resultTextArea.innerHTML = "<pre>" + output + "</pre>";
-		}
-		
-		var escapeHTML = function(val) {
-			return $('<div />').text(val).html();
-		};
 	// --></script>	
   </head>
 
@@ -90,7 +101,7 @@ a=INPUT "Number?"
 b=a*10
 PRINT b</textarea>
 			<br />
-			<input type="button" id="calc_it" class="btn btn-primary btn-xs" value="Run" onClick="run_code()">
+			<input type="button" id="calc_it" class="btn btn-primary btn-xs" value="Run" onClick="bbb_script_lib.runCode()">
 			<hr>
 			<div id="bbb_result"></div>
 			<hr>
