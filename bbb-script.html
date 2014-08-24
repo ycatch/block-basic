@@ -30,7 +30,7 @@
     <![endif]-->
 	<script src="js/bbb_script.js" type="text/javascript"></script> 
 	<script type="text/javascript"><!--
-		var bbb_script_lib = {
+		var bbb_script_env = {
 			runCode: function() {
 				var ans = this.compileCode();
 				this.setCode(ans);
@@ -52,11 +52,18 @@
 			
 			escapeHTML: function(val) {
 				return $('<div />').text(val).html();
+			}
+		}
+		
+		var bbb_script_lib = {
+			input: function() {
+				var val = prompt("Number?");
+				return this.checkNumber(val);
 			},
 			
 			checkNumber: function(val) {
 				if (isNaN(val)) {
-					return val + '';;
+					return val + "";
 				} else {
 					return Number(val);
 				}
@@ -101,7 +108,7 @@ a=INPUT "Number?"
 b=a*10
 PRINT b</textarea>
 			<br />
-			<input type="button" id="calc_it" class="btn btn-primary btn-xs" value="Run" onClick="bbb_script_lib.runCode()">
+			<input type="button" id="calc_it" class="btn btn-primary btn-xs" value="Run" onClick="bbb_script_env.runCode()">
 			<hr>
 			<div id="bbb_result"></div>
 			<hr>

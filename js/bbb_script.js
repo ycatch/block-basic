@@ -92,7 +92,7 @@ case 4:this.$ = "";
 break;
 case 5:this.$ = "alert(" + $$[$0] + ");";
 break;
-case 6:this.$ = "var bbb_a = prompt(" + $$[$0] + "); " + $$[$0-3] + " = this.checkNumber(bbb_a);";
+case 6:this.$ = $$[$0-3] + " = bbb_script_lib.input(" + $$[$0] + ");";
 break;
 case 7:this.$ = $$[$0-2] + "=" + $$[$0] + ";";
 break;
