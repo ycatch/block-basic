@@ -106,6 +106,9 @@
 			<textarea type="text" id="bbb_code" cols="40" rows="5">
 a=INPUT "Number?"
 b=(a+2)*10
+IF(a=1)THEN{
+  PRINT "ONE!"
+}
 PRINT b</textarea>
 			<br />
 			<input type="button" id="calc_it" class="btn btn-primary btn-xs" value="Run" onClick="bbb_script_env.runCode()">
