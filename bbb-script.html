@@ -106,8 +106,12 @@
 			<textarea type="text" id="bbb_code" cols="40" rows="5">
 a=INPUT "Number?"
 b=(a+2)*10
-IF(a=1)THEN{
+IF(a=1) {
   PRINT "ONE!"
+}  ELSE IF (a=2){
+  PRINT "TWO!"
+} ELSE {
+  PRINT "OTHER!"
 }
 PRINT b</textarea>
 			<br />
