@@ -56,8 +56,8 @@
 		}
 		
 		var bbb_script_lib = {
-			input: function() {
-				var val = prompt("Number?");
+			input: function(msg) {
+				var val = prompt(msg);
 				return this.checkNumber(val);
 			},
 			
@@ -104,16 +104,19 @@
 			<form>
 			<p>Enter code to run</p>
 			<textarea type="text" id="bbb_code" cols="40" rows="5">
-a=INPUT "Number?"
-b=(a+2)*10
-IF(a=1) {
-  PRINT "ONE!"
-}  ELSE IF (a=2){
-  PRINT "TWO!"
-} ELSE {
-  PRINT "OTHER!"
-}
-PRINT b</textarea>
+name=INPUT "Name?"
+a=1
+WHILE (a <= 3) {
+  IF(a=1) {
+    b = name + ":ONE! " + a  
+  }  ELSE IF (a=2){
+    b = name + ":TWO! " + a  
+  } ELSE {
+    b = name + ":OTHER! " + a  
+  }
+  PRINT b
+  a=a+1
+}</textarea>
 			<br />
 			<input type="button" id="calc_it" class="btn btn-primary btn-xs" value="Run" onClick="bbb_script_env.runCode()">
 			<hr>
