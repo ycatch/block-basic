@@ -74,8 +74,8 @@
 var bbb_script = (function(){
 var parser = {trace: function trace() { },
 yy: {},
-symbols_: {"error":2,"program":3,"lists":4,"EOF":5,"stmt":6,"block":7,"LBRACE":8,"stmt-sq":9,"RBRACE":10,"BLANK-LINE":11,"assign":12,"PRINT":13,"expr":14,"IDENT":15,"EQ":16,"INPUT":17,"IF":18,"cond":19,"else_if":20,"WHILE":21,"LPAREN":22,"expr_relation":23,"RPAREN":24,"else_if2":25,"else":26,"ELSE":27,"expr_calc":28,"expr_logical":29,"primary":30,"PLUS":31,"MINUS":32,"MULT":33,"DIVIDE":34,"CARET":35,"PRECENT":36,"AND":37,"OR":38,"NE":39,"LE":40,"LT":41,"GE":42,"GT":43,"NUMBER":44,"STRING":45,"NOT":46,"E":47,"PI":48,"ERR":49,"$accept":0,"$end":1},
-terminals_: {2:"error",5:"EOF",8:"LBRACE",10:"RBRACE",11:"BLANK-LINE",13:"PRINT",15:"IDENT",16:"EQ",17:"INPUT",18:"IF",21:"WHILE",22:"LPAREN",24:"RPAREN",27:"ELSE",31:"PLUS",32:"MINUS",33:"MULT",34:"DIVIDE",35:"CARET",36:"PRECENT",37:"AND",38:"OR",39:"NE",40:"LE",41:"LT",42:"GE",43:"GT",44:"NUMBER",45:"STRING",46:"NOT",47:"E",48:"PI",49:"ERR"},
+symbols_: {"error":2,"program":3,"lists":4,"EOF":5,"stmt":6,"block":7,"LBRACE":8,"stmt-sq":9,"RBRACE":10,"BLANK-LINE":11,"assign":12,"PRINT":13,"expr":14,"IDENT":15,"EQ":16,"INPUT":17,"IF":18,"cond":19,"else_if":20,"WHILE":21,"LPAREN":22,"expr_relation":23,"RPAREN":24,"else_if2":25,"else":26,"ELSE":27,"expr_calc":28,"expr_logical":29,"primary":30,"PLUS":31,"MINUS":32,"MULT":33,"DIVIDE":34,"CARET":35,"PERCENT":36,"AND":37,"OR":38,"NE":39,"LE":40,"LT":41,"GE":42,"GT":43,"NUMBER":44,"STRING":45,"NOT":46,"E":47,"PI":48,"ERR":49,"$accept":0,"$end":1},
+terminals_: {2:"error",5:"EOF",8:"LBRACE",10:"RBRACE",11:"BLANK-LINE",13:"PRINT",15:"IDENT",16:"EQ",17:"INPUT",18:"IF",21:"WHILE",22:"LPAREN",24:"RPAREN",27:"ELSE",31:"PLUS",32:"MINUS",33:"MULT",34:"DIVIDE",35:"CARET",36:"PERCENT",37:"AND",38:"OR",39:"NE",40:"LE",41:"LT",42:"GE",43:"GT",44:"NUMBER",45:"STRING",46:"NOT",47:"E",48:"PI",49:"ERR"},
 productions_: [0,[3,2],[4,1],[4,2],[7,3],[9,0],[9,2],[6,1],[6,1],[6,2],[6,4],[6,4],[6,3],[19,3],[20,2],[25,0],[25,5],[26,0],[26,2],[12,3],[14,1],[14,1],[14,1],[28,3],[28,3],[28,3],[28,3],[28,3],[28,3],[29,3],[29,3],[23,3],[23,3],[23,3],[23,3],[23,3],[23,3],[30,1],[30,1],[30,1],[30,3],[30,2],[30,2],[30,1],[30,1],[30,1]],
 performAction: function anonymous(yytext, yyleng, yylineno, yy, yystate /* action[1] */, $$ /* vstack */, _$ /* lstack */) {
 /* this == yyval */
@@ -683,7 +683,7 @@ case 22:return 33
 break;
 case 23:return 34
 break;
-case 24:return 'PERCENT'
+case 24:return 36
 break;
 case 25:return 35
 break;
@@ -707,7 +707,7 @@ case 34:return 49
 break;
 }
 },
-rules: [/^(?:\s+)/,/^(?:_BLANK-LINE\b)/,/^(?:INPUT\b)/,/^(?:PRINT\b)/,/^(?:IF\b)/,/^(?:ELSE\b)/,/^(?:WHILE\b)/,/^(?:TRUE\b)/,/^(?:FALSE\b)/,/^(?:PI\b)/,/^(?:E\b)/,/^(?:[a-zA-Z]+[a-zA-Z0-9_]*\b)/,/^(?:[0-9]+(\.[0-9]+)?\b)/,/^(?:".*")/,/^(?:!=)/,/^(?:=)/,/^(?:&lt;=)/,/^(?:&lt;)/,/^(?:&gt;=)/,/^(?:&gt;)/,/^(?:\+)/,/^(?:-)/,/^(?:\*)/,/^(?:\/)/,/^(?:%)/,/^(?:\^)/,/^(?:&&)/,/^(?:\|\|)/,/^(?:!)/,/^(?:\()/,/^(?:\))/,/^(?:\{)/,/^(?:\})/,/^(?:$)/,/^(?:.*\b)/],
+rules: [/^(?:\s+)/,/^(?:_BLANK-LINE\b)/,/^(?:INPUT\b)/,/^(?:PRINT\b)/,/^(?:IF\b)/,/^(?:ELSE\b)/,/^(?:WHILE\b)/,/^(?:TRUE\b)/,/^(?:FALSE\b)/,/^(?:PI\b)/,/^(?:E\b)/,/^(?:[a-zA-Z]+[a-zA-Z0-9_]*\b)/,/^(?:[0-9]+(\.[0-9]+)?\b)/,/^(?:".*")/,/^(?:!=)/,/^(?:=)/,/^(?:&lt;=)/,/^(?:&lt;)/,/^(?:&gt;=)/,/^(?:&gt;)/,/^(?:\+)/,/^(?:-)/,/^(?:\*)/,/^(?:\/)/,/^(?:%)/,/^(?:\^)/,/^(?:&amp;&amp;)/,/^(?:\|\|)/,/^(?:!)/,/^(?:\()/,/^(?:\))/,/^(?:\{)/,/^(?:\})/,/^(?:$)/,/^(?:.*\b)/],
 conditions: {"INITIAL":{"rules":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34],"inclusive":true}}
 };
 return lexer;
