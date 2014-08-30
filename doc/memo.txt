@@ -1,5 +1,5 @@
 
-library & Tools
+Tools, Library & Documents
 ===============
 
 thank you all.
@@ -54,7 +54,7 @@ parsar generator
 
 
 Reference
-===============
+-------------
 
 ## Calculator
 
@@ -62,7 +62,7 @@ Simple calculator language with variable substitution using jison.
 inspired by https://gist.github.com/richard-to/8109536.
 
 
-## Tiny BASIC & Simmple Script
+## Tiny BASIC & Simple Script
 
 Tiny BASIC - Wikipedia, the free encyclopedia
 http://en.wikipedia.org/wiki/Tiny_BASIC

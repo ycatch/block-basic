@@ -105,17 +105,20 @@
 			<p>Enter code to run</p>
 			<textarea type="text" id="bbb_code" cols="40" rows="5">
 name=INPUT "Name?"
-a=1
-WHILE (a <= 3) {
-  IF(a=1) {
-    b = name + ":ONE! " + a  
-  }  ELSE IF (a=2){
-    b = name + ":TWO! " + a  
+msg = "Hello:" + name + "\n"
+i=1
+WHILE (i <= 15) {
+  IF((i % 3 = 0) && (i % 5 = 0)) {
+    msg = msg + i + ": FizzBuzz\n"
+  }  ELSE IF (i % 3 = 0){
+    msg = msg + i + ": Fizz\n"
+  }  ELSE IF (i % 5 = 0){
+    msg = msg + i + ": Buzz\n"
   } ELSE {
-    b = name + ":OTHER! " + a  
+    msg = msg + i + "\n" 
   }
-  PRINT b
-  a=a+1
+  PRINT msg
+  i=i+1
 }</textarea>
 			<br />
 			<input type="button" id="calc_it" class="btn btn-primary btn-xs" value="Run" onClick="bbb_script_env.runCode()">
