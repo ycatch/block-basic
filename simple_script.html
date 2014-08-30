@@ -8,20 +8,17 @@
     <meta name="author" content="">
     <link rel="icon" href="lib/bootstrap/favicon.ico">
 
-    <title>bitty brick basic</title>
+    <title>Soramame_Simple_Script</title>
 
     <!-- Bootstrap core CSS -->
     <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Bootstrap starter template -->
-    <link href="lib/bootstrap/css/starter-template.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="lib/bootstrap/css/navbar.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="lib/bootstrap/js/ie-emulation-modes-warning.js"></script>
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="lib/bootstrap/js/ie10-viewport-bug-workaround.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -31,6 +28,11 @@
 	<script src="js/bbb_script.js" type="text/javascript"></script> 
 	<script type="text/javascript"><!--
 		var bbb_script_env = {
+			checkCode: function() {
+				var ans = this.compileCode();
+				this.setCode(ans);
+			},
+			
 			runCode: function() {
 				var ans = this.compileCode();
 				this.setCode(ans);
@@ -74,34 +76,53 @@
 
   <body>
 
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Block-Plograming</a>
-        </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-			<!-- menu items -->
-            <!-- <li class="active"><a href="#">Home</a></li> -->
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
-
     <div class="container">
 
-		<div class="starter-template">
-			<h1>bitty brick basic</h1>
-			<p class="lead">This is very small language for programing.</p>
-		</div>
-		<div class="row text-center">
-			<form>
+      <!-- Static navbar -->
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">SoraMame</a>
+          </div>
+          <div class="navbar-collapse collapse">
+<!--            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Nav header</li>
+                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active"><a href="./">Default</a></li>
+              <li><a href="../navbar-static-top/">Static top</a></li>
+              <li><a href="../navbar-fixed-top/">Fixed top</a></li>
+            </ul> -->
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </div>
+
+      <!-- Main component for a primary marketing message or call to action -->
+
+		<h1>SoraMame Simple Script</h1>
+		<p>This is very small language for beginer programing.</p>
+
+		<form>
 			<p>Enter code to run</p>
 			<textarea type="text" id="bbb_code" cols="40" rows="5">
 name=INPUT "Name?"
@@ -119,19 +140,18 @@ WHILE (i <= 15) {
   }
   PRINT msg
   i=i+1
-}</textarea>
+			}</textarea>
 			<br />
+			<input type="button" id="calc_it" class="btn btn-primary btn-xs" value="Compile" onClick="bbb_script_env.checkCode()">
 			<input type="button" id="calc_it" class="btn btn-primary btn-xs" value="Run" onClick="bbb_script_env.runCode()">
 			<hr>
 			<div id="bbb_result"></div>
 			<hr>
-			</form>
-		</div>
+		</form>
 		<footer>
 			<p>&copy; Yutaka kachi 2014</p>
 		</footer>
-    </div> 		
-	</div><!-- /.container -->
+    </div> <!-- /container -->
 
 
     <!-- Bootstrap core JavaScript
@@ -139,5 +159,7 @@ WHILE (i <= 15) {
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="lib/bootstrap/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
