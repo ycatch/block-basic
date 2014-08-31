@@ -129,11 +129,11 @@ name=INPUT "Name?"
 msg = "Hello:" + name + "\n"
 i=1
 WHILE (i <= 15) {
-  IF((i % 3 = 0) && (i % 5 = 0)) {
+  IF((i % 3 == 0) && (i % 5 == 0)) {
     msg = msg + i + ": FizzBuzz\n"
-  }  ELSE IF (i % 3 = 0){
+  }  ELSE IF (i % 3 == 0){
     msg = msg + i + ": Fizz\n"
-  }  ELSE IF (i % 5 = 0){
+  }  ELSE IF (i % 5 == 0){
     msg = msg + i + ": Buzz\n"
   } ELSE {
     msg = msg + i + "\n" 
