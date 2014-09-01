@@ -1,1 +1,2 @@
-2014-08-18 add bitty-basic.script
+2014-09-01 add some basic command
+2014-08-18 add bitty-basic-script
